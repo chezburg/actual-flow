@@ -95,9 +95,10 @@ export class LunchFlowClient {
     }, 'Fetch Lunch Flow accounts');
   }
 
-  async getTransactions(accountId: LunchFlowAccountId): Promise<LunchFlowTransaction[]> {
+  async getTransactions(accountId: LunchFlowAccountId, includePending: boolean = false): Promise<LunchFlowTransaction[]> {
     return this.retryWithBackoff(async () => {
-      const response = await this.client.get(`/accounts/${accountId}/transactions`);
+      const params = includePending ? '?include_pending=true' : '';
+      const response = await this.client.get(`/accounts/${accountId}/transactions${params}`);
       
       // Handle different possible response structures
       if (Array.isArray(response.data.transactions)) {
