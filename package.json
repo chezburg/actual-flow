@@ -10,7 +10,7 @@
     "build": "tsc",
     "start": "node dist/index.js",
     "dev": "ts-node src/index.ts",
-    "prepare": "pnpm run build && find node_modules/.pnpm -type d -path '*/better-sqlite3@*/node_modules/better-sqlite3' -exec sh -c 'cd \"$1\" && pnpm exec prebuild-install --fallback-to-build' _ {} \\;",
+    "prepare": "pnpm run build",
     "install:dev": "pnpm install",
     "clean": "rm -rf dist",
     "release:patch": "npm version patch && git push && git push --tags"
