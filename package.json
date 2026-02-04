@@ -33,7 +33,6 @@
     "ora": "^5.4.1"
   },
   "devDependencies": {
-    "@lunchflow/actual-flow": "^0.0.16",
     "@types/inquirer": "^9.0.7",
     "@types/node": "^20.0.0",
     "ts-node": "^10.9.0",
