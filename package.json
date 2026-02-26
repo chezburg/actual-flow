@@ -13,7 +13,8 @@
     "prepare": "pnpm run build",
     "install:dev": "pnpm install",
     "clean": "rm -rf dist",
-    "release:patch": "npm version patch && git push && git push --tags"
+    "release:patch": "npm version patch && git push && git push --tags",
+    "release:publish": "npm publish --access public"
   },
   "keywords": [
     "lunch-flow",
