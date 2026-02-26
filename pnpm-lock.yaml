@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@actual-app/api':
-        specifier: ^26.2.0
-        version: 26.2.0
+        specifier: ^26.2.1
+        version: 26.2.1
       axios:
         specifier: ^1.6.0
         version: 1.12.2
@@ -45,8 +45,8 @@ importers:
 
 packages:
 
-  '@actual-app/api@26.2.0':
-    resolution: {integrity: sha512-Or0694ALXY950jy1A92Wrwqz2qItigsLMtKJgwl7eL16de3sDKw5yOZGEq2W561i16mQqdYTT+810N+y2QXbpA==}
+  '@actual-app/api@26.2.1':
+    resolution: {integrity: sha512-oTgtVm0rhJBrDasCOAtgNxyFWoTyiQGGeaDYNIAgTq9uHJtUp7z7knA24ktFrMxEf3Jc92M0U393qnbrYTrv8g==}
     engines: {node: '>=20'}
 
   '@actual-app/crdt@2.1.0':
@@ -431,6 +431,7 @@ packages:
   prebuild-install@7.1.3:
     resolution: {integrity: sha512-8Mf2cbV7x1cXPUILADGI3wuhfqWvtiLA1iclTDbFRZkgRQS0NqsPZphna9V+HyTEadheuPmjaJMsbzKQFOzLug==}
     engines: {node: '>=10'}
+    deprecated: No longer maintained. Please contact the author of the relevant native addon; alternatives are available.
     hasBin: true
 
   proxy-from-env@1.1.0:
@@ -573,7 +574,7 @@ packages:
 
 snapshots:
 
-  '@actual-app/api@26.2.0':
+  '@actual-app/api@26.2.1':
     dependencies:
       '@actual-app/crdt': 2.1.0
       better-sqlite3: 12.5.0
