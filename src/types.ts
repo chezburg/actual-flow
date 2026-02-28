@@ -29,6 +29,7 @@ export interface ActualBudgetTransaction {
   isDuplicate?: boolean;
   duplicateOf?: string; // ID of the existing transaction this duplicates
   isPending?: boolean;
+  shouldReplace?: boolean; // Indicates if this transaction should replace an existing one
 }
 
 export interface ActualBudgetAccount {
