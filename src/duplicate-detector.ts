@@ -78,25 +78,12 @@ export class DuplicateTransactionDetector {
 
       if (dateMatch && amountMatch) {
         // Check for pending->cleared transition by looking for [PENDING] in existing transaction
-        const existingHasPending = existing.payee_name?.includes('[PENDING]') ||
-            existing.notes?.includes('[PENDING]');
-        const newHasPending = transaction.payee_name?.includes('[PENDING]') ||
-            transaction.notes?.includes('[PENDING]');
+        const existingHasPending = existing.notes?.includes('[PENDING]');
+        const newHasPending = transaction.notes?.includes('[PENDING]');
 
         // If existing has [PENDING] and new doesn't, it's likely a cleared version
         if (existingHasPending && !newHasPending) {
-          // Strip [PENDING] from existing payee name and compare
-          const existingPayeeStripped = existing.payee_name?.replace('[PENDING] ', '').trim();
-          const newPayee = transaction.payee_name?.trim();
-
-          if (existingPayeeStripped && newPayee) {
-            if (existingPayeeStripped === newPayee) {
-              return existing;
-            }
-          } else {
-            // If payee names not available, date + amount match is sufficient
-            return existing;
-          }
+          return existing;
         }
 
         // Additional check: payee should be similar (if both have payee names)
