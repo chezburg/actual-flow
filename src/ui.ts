@@ -363,7 +363,7 @@ export class TerminalUI {
   }
 
   async showTransactionPreview(transactions: ActualBudgetTransaction[], accounts: ActualBudgetAccount[], count: number = 20): Promise<void> {
-    console.log(chalk.blue(`\n📊 Transaction Preview (showing first ${Math.min(count, transactions.length)})\n`));
+    console.log(chalk.blue(`\n📊 Transaction Preview (showing first ${count})\n`));
     
     if (transactions.length === 0) {
       console.log(chalk.yellow('No transactions to preview.\n'));
