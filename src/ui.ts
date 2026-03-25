@@ -362,7 +362,7 @@ export class TerminalUI {
     console.log(chalk.yellow(`⚠️  ${message}`));
   }
 
-  async showTransactionPreview(transactions: ActualBudgetTransaction[], accounts: ActualBudgetAccount[], count: number = 10): Promise<void> {
+  async showTransactionPreview(transactions: ActualBudgetTransaction[], accounts: ActualBudgetAccount[], count: number = 20): Promise<void> {
     console.log(chalk.blue(`\n📊 Transaction Preview (showing first ${Math.min(count, transactions.length)})\n`));
     
     if (transactions.length === 0) {
